@@ -1,6 +1,6 @@
 # Visualizer Examples
 
-Examples and use cases for Activeloop Visualizer
+Examples and use cases how to integrate visualizer on web applications
 
 ## Visualizer documentation
 
