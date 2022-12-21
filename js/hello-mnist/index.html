@@ -1,8 +1,12 @@
-<div id='container'></div>
-<script src="https://app.activeloop.ai/visualizer/vis.js"></script>
-<script>
-  let container = document.getElementById('container')
-  let p = window.vis.visualize("hub://activeloop/mnist-train/", null, null, container, {
-    backlink: true,
-  })
-</script>
+<html>
+  <body>
+    <div id='container'></div>
+    <script src="https://app.activeloop.ai/visualizer/vis.js"></script>
+    <script>
+      let container = document.getElementById('container')
+      let p = window.vis.visualize("hub://activeloop/mnist-train/", null, null, container, {
+        backlink: true,
+      })
+    </script>
+  </body>
+</html>

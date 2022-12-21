@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <div id='container'></div>
+    <script src="https://app.activeloop.ai/visualizer/1.0.26/vis.js"></script>
+    <script>
+      let container = document.getElementById('container')
+      let p = window.vis.visualize("hub://activeloop/fashionpedia-train", null, null, container, {
+          requireToken: false,
+      })
+      p.then(e => {
+          e.setTensorHidden("", true)
+          e.setTensorHidden("images", false)
+          e.setTensorHidden("masks", false)
+          const update = () => {
+            if (e.scale > 0.6) {
+                e.setTensorHidden("boxes", false)
+                e.setTensorHidden("masks", true)
+            } else {
+                e.setTensorHidden("boxes", true)
+                e.setTensorHidden("masks", false)
+            }
+            requestAnimationFrame(update)
+          }
+          requestAnimationFrame(update)
+      })
+    </script>
+  </body>
+</html>
