@@ -21,7 +21,6 @@ type ScriptLoaderProps = PropsWithChildren<{
 
 const ScriptLoader = (props: ScriptLoaderProps) => {
     const [isScriptLoaded, setIsScriptLoaded] = useState(false);
-    console.log(isScriptLoaded);
 
     useEffect(() => loadScript(props.id, props.src, () => setIsScriptLoaded(true)));
 

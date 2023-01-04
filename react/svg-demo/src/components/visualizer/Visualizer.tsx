@@ -4,15 +4,25 @@ import ScriptLoader from "../ScriptLoader";
 
 type VisualizerProps = {
     uri: string;
+    onLoaded?: (vis: any) => void;
 }
 
 const Visualizer = (props: VisualizerProps) => {
-    const vis = useRef(null);
+    const isLoaded = useRef(false);
+    const visualizer = useRef(null);
 
     const handleContainerCallback = async (container: HTMLDivElement) => {
-        vis.current = await window.vis.visualize(props.uri, null, null, container, { controlPanel: false, backlink: false, token: null });
-        vis.current.engine.darkMode = true
-        vis.current.engine.renderingOption = "simplified"
+        if (isLoaded.current) {
+            return;
+        }
+
+        const vis = await window.vis.visualize(props.uri, null, null, container, { controlPanel: false, backlink: false, token: null });
+        vis.engine.darkMode = true
+        vis.engine.renderingOption = "simplified"
+        isLoaded.current = true;
+        visualizer.current = vis;
+
+        props.onLoaded?.(vis);
     }
 
     return (
