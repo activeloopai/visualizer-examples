@@ -1,4 +1,5 @@
 import './App.css'
+import Visualizer from './components/visualizer'
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <button id="peoples_hs">Hide/show peoples</button>
         <button id="pins_hs">Hide/show pins</button>
       </div>
-      <div id="container"></div>
+      <Visualizer uri="hub://activeloop/rembrandt" />
     </div>
   )
 }
