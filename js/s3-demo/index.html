@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>S3 Demo</title>
+  <script src="https://app.activeloop.ai/visualizer/vis.js">
+  </script>
+</head>
+
+<body>
+  <script src="script.js"></script>
+  <div>
+    <label for="path">Dataset S3 path</label>
+    <input id="path" type="text"></input><br />
+    <label for="token">Access Key ID</label>
+    <input id="token" type="text"></input><br />
+    <label for="secret">Secret Key</label>
+    <input id="secret" type="text"></input><br />
+    <label for="sessionToken">Session Token</label>
+    <input id="sessionToken" type="text"></input>
+    <button onclick="constructVis()">Submit</button>
+  </div>
+
+  <div id='container'></div>
+</body>
+
+</html>
