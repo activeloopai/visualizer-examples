@@ -64,13 +64,15 @@ function constructVis() {
     e.engine.darkMode = true
     e.engine.renderingOption = "simplified"
 
+    const Anchor = window.vis.Anchor
+
     let boxes = []
-    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .5, y: .47 } }, { x: 1, y: .12 }));
-    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .6, y: .47 } }, { x: 1, y: .12 }));
-    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .7, y: .47 } }, { x: 1, y: .12 }));
-    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .35, y: .83 } }, { x: 1, y: .12 }));
-    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .45, y: .83 } }, { x: 1, y: .12 }));
-    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .55, y: .83 } }, { x: 1, y: .12 }));
+    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .5, y: .47 }, anchor: Anchor.bottom }, { x: 1, y: .12 }));
+    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .6, y: .47 }, anchor: Anchor.bottom }, { x: 1, y: .12 }));
+    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .7, y: .47 }, anchor: Anchor.bottom }, { x: 1, y: .12 }));
+    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .35, y: .83 }, anchor: Anchor.bottom }, { x: 1, y: .12 }));
+    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .45, y: .83 }, anchor: Anchor.bottom }, { x: 1, y: .12 }));
+    boxes.push(e.addSvg(box_svg, 0, { coord: { x: .55, y: .83 }, anchor: Anchor.bottom }, { x: 1, y: .12 }));
 
     let box_hs = document.getElementById("boxes_hs");
     box_hs.onclick = () => {
@@ -80,9 +82,9 @@ function constructVis() {
     }
 
     let peoples = []
-    peoples.push(e.addSvg(people_svg, 0, { coord: { x: .35, y: .47 } }, { x: 1, y: .12 }))
-    peoples.push(e.addSvg(people_svg, 0, { coord: { x: .5, y: .65 } }, { x: 1, y: .12 }))
-    peoples.push(e.addSvg(people_svg, 0, { coord: { x: .65, y: .83 } }, { x: 1, y: .12 }))
+    peoples.push(e.addSvg(people_svg, 0, { coord: { x: .35, y: .47 }, anchor: Anchor.bottom }, { x: 1, y: .12 }))
+    peoples.push(e.addSvg(people_svg, 0, { coord: { x: .5, y: .65 }, anchor: Anchor.bottom }, { x: 1, y: .12 }))
+    peoples.push(e.addSvg(people_svg, 0, { coord: { x: .65, y: .83 }, anchor: Anchor.bottom }, { x: 1, y: .12 }))
 
     let peop_hs = document.getElementById("peoples_hs");
     peop_hs.onclick = () => {
@@ -94,7 +96,7 @@ function constructVis() {
     let pins = []
     e.engine.onClick = (i) => {
       if (i >= 0) {
-        pins.push(e.addSvg(pin_svg, i, { coord: e.getHoverCoord(i) }, { x: .1, y: .1 }))
+        pins.push(e.addSvg(pin_svg, i, { coord: e.getHoverCoord(i), anchor: Anchor.bottom }, { x: .1, y: .1 }))
       }
     }
 
