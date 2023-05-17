@@ -1,3 +1,3 @@
-# React hello-mnist-js example
+# React tiles demo example
 
-This example loads visualizer on a full page canvas and visualizes the mnist dataset.
+This example loads visualizer on a full page canvas, visualizes image with tiles and uses meta tensor to convert click position to the color from meta.
